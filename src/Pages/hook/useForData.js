@@ -4,37 +4,90 @@ import { useEffect, useState } from "react";
 
 const useForData = () => {
   const [auth, setAuth] = useState({});
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState('ss');
+  const [isloading, setIsloading] = useState(true);
 
 
-  const handlerToLoginUser = (email) => {
+  const handlerToLoginUser = (email,navigate,token) => {
     axios
-      .post(`http://localhost:9000/loginuser?email=${email}`)
+      .post(`http://localhost:9000/loginuser?email=${email}`,{
+        
+          'authorization': `Bearer ${token}`,
+        
+      })
       .then(function (response) {
-          console.log(response);
         if(response.data.insertedId){
-            localStorage.setItem('email',JSON.stringify(email))
+            localStorage.setItem('email',JSON.stringify(email));
+            setAuth({email:email})
+            navigate("/");
+            setIsloading(false)
+        }
+      });
+  };
+  const handlerToLoginUserSignup = (email,navigate,token) => {
+    axios
+      .post(`http://localhost:9000/loginuser?email=${email}`,{
+        
+        'authorization': `Bearer ${token}`,
+      
+    })
+      .then(function (response) {
+        if(response.data.insertedId){
+            localStorage.setItem('email',JSON.stringify(email));
+            setAuth({email:email})
+            navigate("/");
+            setIsloading(false)
+        }
+      });
+  };
+  useEffect(() => {
+
+    getEmail()
+}, [])
+
+  const handlerToLogOutUser = (email) => {
+    axios
+      .delete(`http://localhost:9000/loginuser?email=${email}`)
+      .then(function (response) {
+        if(response.data){
+            localStorage.removeItem('email');
+            setAuth("");
         }
       });
   };
 
 const getEmail=()=>{
-  setEmail(JSON.parse(localStorage.getItem('email')))  
+
+  setEmail(JSON.parse(localStorage.getItem('email')));
+  setIsloading(false)
 }
 
   useEffect(() => {
+
+    setIsloading(true)
+   if(email){
     fetch(`http://localhost:9000/loginuser?email=${email}`)
-        .then(res => res.json())
-        .then(data => setAuth(data))
+    .then(res => res.json())
+    .then(data => {
+
+      setAuth(data)
+      setIsloading(false)
+    })}
+    else{
+      setIsloading(false)
+    }
 }, [email])
 
 
-console.log(auth);
   return {
     auth,
     setAuth,
     handlerToLoginUser,
     getEmail,
+    handlerToLogOutUser,
+    isloading,
+    setIsloading,
+    handlerToLoginUserSignup,
   };
 };
 
