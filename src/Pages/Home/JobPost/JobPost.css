@@ -1,0 +1,17 @@
+.job-form label{
+    display: flex;
+    justify-content: space-between;
+    width:100%;
+    text-align: start;
+}
+
+.job-form label input{
+    width: 70%;
+    padding: 6px;
+    background-color: #ededed;
+    border: none;
+}
+.job-form label select{
+    width: 72%;
+    background-color: #ededed;
+}

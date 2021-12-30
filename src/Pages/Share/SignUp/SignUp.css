@@ -1,0 +1,57 @@
+.signup-container{
+   background-color: #ededed;
+}
+.signup-form-group {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.signup-form-group label{
+    display: flex;
+    flex-direction: column;
+}
+.signup-form-group label{
+    width:45%;
+    text-align: start;
+    padding: 10px;
+}
+.signup-form-group label input{
+    padding: 6px;
+    background-color: #ededed;
+}
+.email-level{
+    width:100%;
+    text-align: start; 
+}
+.sign-btn{
+    font-weight: 500;
+    font-size: 20px;
+background-color: #182F59;
+color: #fff;
+width: 49%;
+padding: 10px 3px;
+border: none;
+border-right: 1px solid;
+}
+.sign-btn:hover{
+    background-color: #000000;
+    color: #49BD28;
+}
+
+.submit-btn{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #182F59; 
+    padding: 10px 40px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+}
+.submit-btn:hover{
+    background-color: #000000;
+    color: #49BD28;
+    
+}
+.signinandup-btn{
+    display: flex;
+}
