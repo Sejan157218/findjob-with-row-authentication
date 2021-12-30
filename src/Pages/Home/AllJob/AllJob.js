@@ -40,7 +40,7 @@ function createData(name, calories, fat, carbs, protein) {
 const AllJob = ({handleClose,open,setlLoadData,jobs}) => {
     const handlerToDelete = (id)=>{
         axios
-      .delete(`http://localhost:9000/jobpost?id=${id}`)
+      .delete(`https://gentle-taiga-84055.herokuapp.com/jobpost?id=${id}`)
       .then(function (response) {
         if(response.data){
             setlLoadData(true)

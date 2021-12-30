@@ -11,7 +11,7 @@ const ViewJob = () => {
 
 
     useEffect(()=>{
-        fetch('http://localhost:9000/jobpost')
+        fetch('https://gentle-taiga-84055.herokuapp.com/jobpost')
         .then(res=>res.json())
         .then(data=>setJob(data))
     },[])

@@ -10,7 +10,7 @@ const useForData = () => {
 
   const handlerToLoginUser = (email,navigate,token) => {
     axios
-      .post(`http://localhost:9000/loginuser?email=${email}`,{
+      .post(`https://gentle-taiga-84055.herokuapp.com/loginuser?email=${email}`,{
         
           'authorization': `Bearer ${token}`,
         
@@ -26,7 +26,7 @@ const useForData = () => {
   };
   const handlerToLoginUserSignup = (email,navigate,token) => {
     axios
-      .post(`http://localhost:9000/loginuser?email=${email}`,{
+      .post(`https://gentle-taiga-84055.herokuapp.com/loginuser?email=${email}`,{
         
         'authorization': `Bearer ${token}`,
       
@@ -47,7 +47,7 @@ const useForData = () => {
 
   const handlerToLogOutUser = (email) => {
     axios
-      .delete(`http://localhost:9000/loginuser?email=${email}`)
+      .delete(`https://gentle-taiga-84055.herokuapp.com/loginuser?email=${email}`)
       .then(function (response) {
         if(response.data){
             localStorage.removeItem('email');
@@ -66,7 +66,7 @@ const getEmail=()=>{
 
     setIsloading(true)
    if(email){
-    fetch(`http://localhost:9000/loginuser?email=${email}`)
+    fetch(`https://gentle-taiga-84055.herokuapp.com/loginuser?email=${email}`)
     .then(res => res.json())
     .then(data => {
 

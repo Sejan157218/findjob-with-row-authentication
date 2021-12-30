@@ -16,7 +16,7 @@ const SingUp = () => {
   const onSubmit = (data) => {
     if (data.password === data.rePassword) {
       setErrorSignup("");
-      axios.post("http://localhost:9000/users", data).then(function (response) {
+      axios.post("https://gentle-taiga-84055.herokuapp.com/users", data).then(function (response) {
         console.log(response);
         if (response.data.message == "Signup successful!") {
           handlerToLoginUserSignup(

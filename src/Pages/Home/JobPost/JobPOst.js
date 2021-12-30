@@ -10,7 +10,7 @@ import axios from "axios";
 const JobPOst = ({ open, handleClose,setlLoadData }) => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
-    axios.post("http://localhost:9000/jobpost", data)
+    axios.post("https://gentle-taiga-84055.herokuapp.com/jobpost", data)
     .then(function (response) {
        if(response.data.insertedId){
         handleClose();
