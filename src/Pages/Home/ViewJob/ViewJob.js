@@ -28,7 +28,7 @@ const ViewJob = () => {
         <h1>level  : {jb?.level}</h1>
         <h1>Vacancy : {jb?.vacancy}</h1>
         <h1>Salary : {jb?.salary}</h1>
-        <h1>Description : </h1> <p>{jb?.jobtitle}</p>
+        <h1>Description : </h1> <p>{jb?.description}</p>
         <Link  to="/"> <button className="sign-btn">Go To Home</button></Link>
         </div>
        </div>

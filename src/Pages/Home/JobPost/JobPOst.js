@@ -50,8 +50,8 @@ const JobPOst = ({ open, handleClose,setlLoadData }) => {
             <label>
               Shift
               <select {...register("shift")}>
-                <option value="day">Day</option>
-                <option value="night">Night</option>
+                <option value="Day">Day</option>
+                <option value="Night">Night</option>
               </select>
             </label>
             <br />
@@ -59,17 +59,18 @@ const JobPOst = ({ open, handleClose,setlLoadData }) => {
             <label>
               Departments
               <select {...register("department")}>
-                <option value="web">Web Development</option>
-                <option value="front">Front End Developer</option>
-                <option value="full-stack">Full Stack Developer</option>
+                <option value="Web Development">Web Development</option>
+                <option value="Front End Developer">Front End Developer</option>
+                <option value="Full Stack Developer">Full Stack Developer</option>
               </select>
             </label>
             <br />
             <label>
               Level
               <select {...register("level")}>
-                <option value="entry">Entry</option>
-                <option value="middle">Middle</option>
+                <option value="Entry">Entry</option>
+                <option value="Middle">Middle</option>
+                <option value="Expert">Expert</option>
               </select>
             </label>
             <br />
@@ -88,8 +89,8 @@ const JobPOst = ({ open, handleClose,setlLoadData }) => {
             <label>
               Filter Options
               <select {...register("filter")}>
-                <option value="it">It</option>
-                <option value="technology">Technology</option>
+                <option value="It">It</option>
+                <option value="Technology">Technology</option>
               </select>
             </label>
             <br />
